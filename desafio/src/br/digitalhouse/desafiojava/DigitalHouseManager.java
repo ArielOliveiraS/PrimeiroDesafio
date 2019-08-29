@@ -5,10 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 public class DigitalHouseManager {
-    private Aluno aluno;
-    private Curso curso;
-    private Date dataDeMatricula;
-
     List<Aluno> alunos = new ArrayList<>();
     List<Professor> professores = new ArrayList<>();
     List<Curso> cursos = new ArrayList<>();
@@ -59,6 +55,7 @@ public class DigitalHouseManager {
     public void matricularAluno(Integer codigoDoAluno, Integer codigoDoCurso) {
         Curso curso = null;
         Aluno aluno = null;
+        Date dataDeMatricula = null;
         Matricula matricula;
         for (int i = 0; i < cursos.size(); i++) {
             if (cursos.get(i).getCodigoDoCurso().equals(codigoDoCurso)) {
@@ -78,7 +75,7 @@ public class DigitalHouseManager {
 
     public void alocarProfessores(Integer codigoDoCurso, Integer codigoProfessorTitular, Integer
             codigoDoProfessorAdjunto) {
-
+        Curso curso = null;
         ProfessorTitular professorTitular = null;
         ProfessorAdjunto professorAdjunto = null;
         for (int i = 0; i < professores.size(); i++) {

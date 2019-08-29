@@ -27,6 +27,6 @@ public class Main {
         digitalHouse.matricularAluno(004, 20001);
 
         digitalHouse.alocarProfessores(20001,123, 002);
-
+        digitalHouse.alocarProfessores(20002,321, 001);
     }
 }

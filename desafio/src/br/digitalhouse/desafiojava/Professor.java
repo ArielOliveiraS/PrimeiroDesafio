@@ -9,7 +9,6 @@ public abstract class Professor {
     protected Integer tempoDeCasa;
     protected Integer codigoDoProfessor;
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -17,8 +16,6 @@ public abstract class Professor {
         Professor professor = (Professor) o;
         return Objects.equals(codigoDoProfessor, professor.codigoDoProfessor);
     }
-
-
     public String getNome() {
         return nome;
     }

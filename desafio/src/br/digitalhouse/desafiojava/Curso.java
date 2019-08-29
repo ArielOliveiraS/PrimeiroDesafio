@@ -7,21 +7,29 @@ import java.util.Objects;
 public class Curso {
     private String nome;
     private Integer codigoDoCurso;
-    private Professor professor;
+    private ProfessorTitular professorTitular;
+    private ProfessorAdjunto professorAdjunto;
     private Integer quantidadeMaximaDeAlunos;
 
     List<Aluno> listaDeAlunosMatriculados = new ArrayList<>();
 
-    public Curso(String nome, Integer codigoDoCurso) {
+    public Curso(String nome, Integer codigoDoCurso, Integer quantidadeMaximaDeAlunos) {
+        this.quantidadeMaximaDeAlunos=quantidadeMaximaDeAlunos;
         this.nome = nome;
         this.codigoDoCurso = codigoDoCurso;
     }
 
-    public void adicionarAluno(){
-
+    public Boolean adicionarAluno(Aluno aluno){
+        if (getQuantidadeMaximaDeAlunos() + 1 < getQuantidadeMaximaDeAlunos()){
+            return true;
+        }else { 
+            return false;
+        }
     }
-    public void excluirAluno(){
 
+    public void excluirAluno(Aluno aluno){
+        listaDeAlunosMatriculados.remove(aluno);
+        System.out.println("O aluno " + aluno + " foi removido da lista;");
     }
 
 
@@ -50,12 +58,20 @@ public class Curso {
         this.codigoDoCurso = codigoDoCurso;
     }
 
-    public Professor getProfessor() {
-        return professor;
+    public ProfessorTitular getProfessorTitular() {
+        return professorTitular;
     }
 
-    public void setProfessor(Professor professor) {
-        this.professor = professor;
+    public void setProfessorTitular(ProfessorTitular professorTitular) {
+        this.professorTitular = professorTitular;
+    }
+
+    public ProfessorAdjunto getProfessorAdjunto() {
+        return professorAdjunto;
+    }
+
+    public void setProfessorAdjunto(ProfessorAdjunto professorAdjunto) {
+        this.professorAdjunto = professorAdjunto;
     }
 
     public Integer getQuantidadeMaximaDeAlunos() {
